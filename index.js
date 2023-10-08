@@ -87,7 +87,7 @@ function downloadSubtitles(event) {
   }
   let zipFolder = new JSZip();
   let folderName = episodes[Object.keys(episodes)[0]]['info']['anime_title'];
-  if (!folderName) {
+  if (!folderName || folderName === 'undefined') {
     folderName = 'subtitles';
   }
   for (let episodeName in episodesSubtitlesMap) {
