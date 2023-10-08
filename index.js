@@ -6,6 +6,8 @@ const episodesDropZoneElement = document.querySelector("#episodesDropZone");
 const subtitlesDropZoneElement = document.querySelector("#subtitlesDropZone");
 const subtitlesDownloadButtonElement = document.querySelector("#subtitlesDownloadButton");
 const tableBodyElement = document.querySelector("#tableBody");
+const autoRadioButtonElement = document.querySelector("#auto");
+
 
 initializeAnitomy();
 episodesDropZoneElement.addEventListener("drop", handleEpisodesDropZoneDrop);
@@ -68,7 +70,10 @@ function handleSubtitlesDropZoneDrop(event) {
 
 function downloadSubtitles(event) {
   event.preventDefault();
-  let episodesSubtitlesMap = mapEpisodesToSubtitlesUsingEpisodeNumber();
+  let episodesSubtitlesMap = null
+  if (autoRadioButtonElement.checked) {
+    episodesSubtitlesMap = mapEpisodesToSubtitlesUsingEpisodeNumber();
+  }
   // if not defined
   if (episodesSubtitlesMap) {
     console.log('Using episode number');

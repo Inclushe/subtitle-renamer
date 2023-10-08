@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Subtitle Renamer</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <h1>Subtitle Renamer</h1>
+  <details>
+    <summary>More Info</summary>
+    <p>Subtitles will be copied then renamed to the same name as its corresponding episode and saved to a .zip file.</p>
+    <p>Example: Given an episode titled "[GrubsYes] Spy x Family - 01 (1080p) [C00FFEE].mkv" and a subtitle file titled "SPY×FAMILY.S01E01.SHRimp.Jetflix.ja[cc].srt", the subtitle file will be renamed "[GrubsYes] Spy x Family - 01 (1080p) [C00FFEE].srt". </p>
+    <p>Episodes and subtitles will be mapped by episode number or, if we detect an issue, by file order.</p>
+    <p>All files are handled locally, and no files are sent over the network.</p>
+  </details>
   <p>Acquire Japanese subtitles from <a href="https://kitsunekko.net/dirlist.php?dir=subtitles%2Fjapanese%2F" target="_blank">kitsunekko</a>.</p>
   <div class="drops">
     <div class="drop-zone" id="episodesDropZone">
@@ -17,8 +25,16 @@
     </div>
   </div>
   <div>
-    <button class="download-button" id="subtitlesDownloadButton" disabled autocomplete="off">Download Renamed Subtitles</button>
+    <button class="download-button" id="subtitlesDownloadButton" disabled autocomplete="off">Download Renamed Subtitles (.zip)</button>
   </div>
+  <!-- Radio with inputs Auto and File Order -->
+  <div>
+    <input type="radio" id="auto" name="mapping" value="auto" checked>
+    <label for="auto">Auto</label>
+    <input type="radio" id="fileOrder" name="mapping" value="fileOrder">
+    <label for="fileOrder">File Order</label>
+  </div>
+  <br>
   <table class="table" border=1>
     <thead>
       <tr>
