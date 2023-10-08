@@ -37,6 +37,8 @@ function handleEpisodesDropZoneDrop(event) {
           updateTable();
         })
         .catch((err) => console.log(err));
+    } else if (entry.isDirectory) {
+      alert('Please drop files, not folders.');
     }
   }
   updateTable();
@@ -63,6 +65,8 @@ function handleSubtitlesDropZoneDrop(event) {
           updateTable();
         })
         .catch((err) => console.log(err));
+    } else if (entry.isDirectory) {
+      alert('Please drop files, not folders.');
     }
   }
   updateTable();
