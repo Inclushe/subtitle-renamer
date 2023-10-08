@@ -45,3 +45,9 @@ h1 {
 .table {
   width: 100%;
 }
+
+.footer-link {
+  display: block;
+  color: gray;
+  margin-top: 32px;
+}
