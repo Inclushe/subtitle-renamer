@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <p>Acquire Japanese subtitles from <a href="https://kitsunekko.net/dirlist.php?dir=subtitles%2Fjapanese%2F" target="_blank">kitsunekko</a>.</p>
+  <div class="drops">
+    <div class="drop-zone" id="episodesDropZone">
+    <p>Drag all episode files here in order.</p>
+    </div>
+    <div class="drop-zone" id="subtitlesDropZone">
+    <p>Drag all subtitle files here in order.</p>
+    </div>
+  </div>
+  <div>
+    <button class="download-button" id="subtitlesDownloadButton" disabled autocomplete="off">Download Renamed Subtitles</button>
+  </div>
+  <table class="table" border=1>
+    <thead>
+      <tr>
+        <th>Episodes</th>
+        <th>Ep Info</th>
+        <th>Subtitles</th>
+        <th>Sub Info</th>
+        <th>Sub Data</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+  <script src="./static/anitomyscript.bundle.min.js"></script>
+  <script src="./index.js" type="module"></script>
+</body>
+</html>
